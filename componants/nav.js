@@ -19,6 +19,9 @@ const navbar=()=>{
             <a class="nav-link" href="/pages/cart.html">Cart</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="/pages/addmin.html">Admin</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="/pages/signup.html">Signup</a>
           </li>
           <li class="nav-item">
