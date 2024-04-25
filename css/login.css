@@ -1,0 +1,15 @@
+.imges{
+    background-image: url("https://media.istockphoto.com/id/2037664901/vector/a-girl-and-a-huge-unlocked-phone-screen-illustrating-the-use-of-childrens-gadgets.jpg?s=2048x2048&w=is&k=20&c=Q841tI-PN4fYAacntDUq-MC3ufQZr7K-JAielexmAzk=");
+    height: 600px;
+    background-size: cover;
+    
+}
+.container{
+    margin-top: 80px;
+    border: 2px solid #FFFAB7;
+    box-shadow: 0 0px  20px #416D19;
+}
+.login{
+    padding-top: 60px;
+    
+}

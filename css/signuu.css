@@ -1,0 +1,21 @@
+.signup{
+    background-image: url("https://g.foolcdn.com/editorial/images/540597/gettyimages-865596822.jpg");
+    height: 800px;
+   width: 100%;
+    background-size: cover ;
+   padding-top: 130px;
+    margin: auto;
+}
+.form{
+ 
+  background-color: rgba(0, 0, 0, 0.089);
+  padding: 20px 0px;
+  width: 40%;
+  margin:auto;
+  height: 600px;
+box-shadow: 0 0 10px black;
+}
+input{
+    background-color: transparent !important;
+   
+}
