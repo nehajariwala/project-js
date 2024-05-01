@@ -1,10 +1,10 @@
-const postdata=(data)=>{
+const update=(data)=>{
 
-
+console.log(data)
   try {
-    fetch(`http://localhost:3000/cart/${data.id}`,{
-        method: "PATCH",
-        headers: { "Content-type": "application/json" },
+    fetch(`http://localhost:3000/cart`,{
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
     })
   } catch (error) {
@@ -13,4 +13,4 @@ const postdata=(data)=>{
     
 
 }
-export default postdata;
+export default update;

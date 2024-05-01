@@ -1,368 +1,138 @@
-/* @import url("https://api.fontshare.com/v2/css?f[]=archivo@100,200,300,400,500,600,700,800,900&f[]=clash-display@200,300,400,500,600,700&display=swap"); */
-
-:root {
-	--slide-width: min(25vw, 300px);
-	--slide-aspect: 2 / 3;
-    
-
-	--slide-transition-duration: 800ms;
-	--slide-transition-easing: ease;
-
-	--font-archivo: "Archivo", sans-serif;
-	--font-clash-display: "Clash Display", sans-serif;
-}
-
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
-
-/* html,
-body {
+.box1 {
+	background-image: url("https://static.wixstatic.com/media/2feeec_5fad5efbfdd0477cabfb3fe42e8d8173~mv2.jpg/v1/fill/w_952,h_1160,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/2feeec_5fad5efbfdd0477cabfb3fe42e8d8173~mv2.jpg");
+	height: 1000px;
+	background-repeat: no-repeat;
 	width: 100%;
-	height: 100%;
+	position: static;
+	background-attachment: fixed;
+
 }
 
-body {
-	display: grid;
-	place-items: center;
-	overflow: hidden;
-
-	background: rgba(0, 0, 0, 0.787);
-} */
-
-button {
-	border: none;
-	background: none;
-	cursor: pointer;
-	&:focus {
-		outline: none;
-		border: none;
-	}
-}
-
-/* ------------------------------------------------ */
-/* -------------------- SLIDER -------------------- */
-/* ------------------------------------------------ */
-
-.slider {
-	width: calc(3 * var(--slide-width));
-	height: calc(2 * var(--slide-height));
-	display: flex;
-	align-items: center;
-}
-
-.slider--btn {
-	--size: 40px;
-
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	opacity: 0.7;
-	transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
-	z-index: 999;
-
-	& svg {
-		width: var(--size);
-		height: var(--size);
-		stroke: white;
-	}
-
-	&:hover {
-		opacity: 1;
-	}
-}
-
-.slides__wrapper {
+.box2 {
+	background-image: url("https://static.wixstatic.com/media/2feeec_a6c484a2829348a0a846718c853f8435~mv2.jpg/v1/fill/w_952,h_1160,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/2feeec_a6c484a2829348a0a846718c853f8435~mv2.jpg");
+	height: 1000px;
+	background-repeat: no-repeat;
 	width: 100%;
-	height: 100%;
-
-	display: grid;
-	place-items: center;
-
-	& > * {
-		grid-area: 1 / -1;
-	}
 }
 
-.slides,
-.slides--infos {
-	width: 100%;
-	height: 100%;
-
-	pointer-events: none;
-
-	display: grid;
-	place-items: center;
-	& > * {
-		grid-area: 1 / -1;
-	}
+.box2 h1 {
+	padding-top: 250px;
+	padding-left: 50px;
+	text-transform: capitalize;
+	font-size: 52px;
+	color: #F6F4E3;
 }
 
-/* ------------------------------------------------ */
-/* -------------------- SLIDE --------------------- */
-/* ------------------------------------------------ */
+.box2 p {
+	color: #F6F4E3;
+	padding-left: 50px;
 
-.slide {
-	--slide-tx: 0px;
-	--slide-ty: 0vh;
-	--padding: 0px;
-	--offset: 0;
+	font-size: 20px;
 
-	width: var(--slide-width);
-	height: auto;
-	aspect-ratio: var(--slide-aspect);
-	user-select: none;
-	perspective: 800px;
-
-	transform: perspective(1000px)
-		translate3d(var(--slide-tx), var(--slide-ty), var(--slide-tz, 0))
-		rotateY(var(--slide-rotY)) scale(var(--slide-scale));
-	transition: transform var(--slide-transition-duration)
-		var(--slide-transition-easing);
 }
 
-.slide[data-current] {
-	--slide-scale: 1.2;
-	--slide-tz: 0px;
-	--slide-tx: 0px;
-	--slide-rotY: 0;
-
-	pointer-events: auto;
+.box2 a {
+	display: block;
+	padding-left: 50px;
+	color: #F6F4E3;
 }
 
-.slide[data-next] {
-	--slide-tx: calc(1 * var(--slide-width) * 1.07);
-	--slide-rotY: -45deg;
+.box3 {
+	background-image: url("https://i0.wp.com/mydallasmommy.com/wp-content/uploads/2019/03/Capture-172.jpg?fit=589%2C625&ssl=1");
+	height: 700px;
+	margin-left: 300px;
+
+
+	background-repeat: no-repeat;
 }
 
-.slide[data-previous] {
-	--slide-tx: calc(-1 * var(--slide-width) * 1.07);
-	--slide-rotY: 45deg;
+.box4 {
+	height: 420px;
+	background-repeat: no-repeat;
+	margin: auto;
+	background-image: url("https://media.istockphoto.com/id/641035054/photo/young-two-man-standing-on-gray-wall.jpg?s=612x612&w=0&k=20&c=ETLyk3Y8fIl96jCn3KPNQaPlAmDUeULIJZeI5_Bli_E=");
 }
 
-.slide:not([data-current]) {
-	--slide-scale: 1;
-	--slide-tz: 0;
-	/* --slide-tx: calc(var(--offset) * var(--slide-width) * 1.05); */
-	/* --slide-rotY: calc(var(--dir) * -45deg); */
+a {
+	color: #929A8A !important;
+	display: inline;
+	font-size: 20px;
+	text-decoration: none;
 
-	pointer-events: none;
+
 }
 
-.slide[data-current] {
-	& .slide--image {
-		filter: brightness(0.8);
-	}
+.box5 h1 {
+	text-align: center;
+	color: #4A573E;
+	font-weight: 300;
+	padding: 70px;
 }
 
-.slide:not([data-current]) {
-	& .slide--image {
-		filter: brightness(0.7);
-	}
-}
-
-.slide__inner {
-	--rotX: 0;
-	--rotY: 0;
-	--bgPosX: 0%;
-	--bgPosY: 0%;
-
-	position: relative;
-	left: calc(var(--padding) / 2);
-	top: calc(var(--padding) / 2);
-	width: calc(100% - var(--padding));
-	height: calc(100% - var(--padding));
-	transform-style: preserve-3d;
-	transform: rotateX(var(--rotX)) rotateY(var(--rotY));
-}
-
-.slide--image__wrapper {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-}
-
-.slide--image {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	object-fit: cover;
-	transform: translate(-50%, -50%) scale(1.10)
-		translate3d(var(--bgPosX), var(--bgPosY), 0);
-	transition: filter var(--slide-transition-duration)
-		var(--slide-transition-easing);
-}
-
-.slide__bg {
-	position: fixed;
-	inset: -20%;
-	background-image: var(--bg);
+.one {
+	border: 5px solid white;
+	height: 334px;
+	width: 334px;
 	background-size: cover;
-	background-position: center center;
-
-	z-index: -1;
-	pointer-events: none;
-
-	transition: opacity var(--slide-transition-duration) ease,
-		transform var(--slide-transition-duration) ease;
-
-	&::before {
-		content: "";
-		position: absolute;
-		inset: 0;
-	}
-
-	&::before {
-		background: rgba(0, 0, 0, 0.8);
-		backdrop-filter: blur(8px);
-	}
-
-	&:not([data-current]) {
-		opacity: 0;
-	}
-
-	&[data-previous] {
-		transform: translateX(-10%);
-	}
-
-	&[data-next] {
-		transform: translateX(10%);
-	}
+	background-image: url("https://static.parastorage.com/services/instagram-cdn/1.691.0/assets/ig-templates-accounts/Editor/Loungewear%20Store/05.jpg");
 }
 
-/* ------------ SLIDE INFO ---------------- */
-
-.slide-info {
-	--padding: 0px;
-
-	position: relative;
-	width: var(--slide-width);
-	height: 100%;
-	aspect-ratio: var(--slide-aspect);
-	user-select: none;
-	perspective: 800px;
-	z-index: 100;
+.two {
+	border: 5px solid white;
+	height: 334px;
+	width: 334px;
+	background-size: cover;
+	background-image: url("https://media.istockphoto.com/id/851952358/photo/most-stylish-twosome.jpg?s=612x612&w=0&k=20&c=8tCOODLStLgdiUYGndbUAR_h7NSGp6ZNFBmbaBO_n3I=");
 }
 
-.slide-info[data-current] {
-	& .slide-info--text span {
-		opacity: 1;
-		transform: translate3d(0, 0, 0);
-		transition-delay: 250ms;
-	}
+.three {
+	border: 5px solid white;
+	height: 334px;
+	width: 334px;
+	background-size: cover;
+	background-image: url("https://avatars.mds.yandex.net/i?id=b4124e6c02edf29a9c13cf70a0e48bd907ecd436-10639710-images-thumbs&n=13");
 }
 
-.slide-info:not([data-current]) {
-	& .slide-info--text span {
-		opacity: 0;
-		transform: translate3d(0, 100%, 0);
-		transition-delay: 0ms;
-	}
+.four {
+	border: 5px solid white;
+	height: 334px;
+	width: 334px;
+	background-size: cover;
+	background-image: url("https://jooinn.com/images/shopping-time-5.jpg");
 }
-
-.slide-info__inner {
-	position: relative;
-	left: calc(var(--padding) / 2);
-	top: calc(var(--padding) / 2);
-	width: calc(100% - var(--padding));
-	height: calc(100% - var(--padding));
-	transform-style: preserve-3d;
-	transform: rotateX(var(--rotX)) rotateY(var(--rotY));
+.box5 h3{
+	color: #4A573E;	
+	text-align: center;
+	font-weight: 400;
+	text-transform: uppercase;
+	padding-top: 40px;
+	font-size: 32px;
 }
-
-.slide-info--text__wrapper {
-	--z-offset: 45px;
-
-	position: absolute;
-	height: fit-content;
-	left: -15%;
-	bottom: 15%;
-	transform: translateZ(var(--z-offset));
-	z-index: 2;
-	pointer-events: none;
-}
-
-.slide-info--text {
-	font-family: var(--font-clash-display);
-	color: #fff;
-	overflow: hidden;
-
-	& span {
-		display: block;
-		white-space: nowrap;
-		transition: var(--slide-transition-duration) var(--slide-transition-easing);
-		transition-property: opacity, transform;
-	}
-
-	&[data-title],
-	&[data-subtitle] {
-		font-size: min(3cqw, 2.4rem);
-		font-weight: 800;
-		letter-spacing: 0.2cqw;
-		white-space: nowrap;
-		text-transform: uppercase;
-	}
-
-	&[data-subtitle] {
-		margin-left: 2cqw;
-		font-size: min(2.2cqw, 1.8rem);
-		font-weight: 600;
-	}
-
-	&[data-description] {
-		margin-left: 1cqw;
-		font-size: min(1.5cqw, 0.95rem);
-		font-family: var(--font-archivo);
-		font-weight: 300;
-	}
-}
-
-/* ------------------------------------------------ */
-/* -------------------- LOADER --------------------- */
-/* ------------------------------------------------ */
-
-.loader {
-	position: fixed;
-	inset: 0;
-
-	display: grid;
-	place-items: center;
-
-	background: #000;
-	z-index: 1000;
-
-	opacity: 1;
-	transition: opacity 0.5s ease-out;
-
-	.loader__text {
-		font-family: var(--font-clash-display);
-		font-size: clamp(2rem, 2vw, 5rem);
-		font-weight: 800;
-		color: #fff;
-	}
-}
-
-/* ------------------------------------------- */
-
-.support {
-	position: absolute;
-	right: 10px;
-	bottom: 10px;
+.box5 p{
+	color: #4A573E;	
+	text-align: center;
+	font-weight: 300;
+	text-transform: lowercase;
+	font-size: 18px;
 	padding: 10px;
-	display: flex;
-	a {
-		margin: 0 10px;
-		color: #fff;
-		font-size: 1.8rem;
-		backface-visibility: hidden;
-		transition: all 150ms ease;
-		&:hover {
-			transform: scale(1.1);
-		}
-	}
+}
+form{
+	text-align: center;
+}
+form input{
+	border: none;
+background-color: transparent;
+color: #4A573E;	
+padding-right:120px ;
+border-bottom: 1px solid red;
+padding-bottom: 10px;
+
+
+}
+form button{
+	border: none;
+	background-color: transparent;
+	color: #4A573E;	
+
+	font-size: 20px;
 }

@@ -12,6 +12,29 @@
         width: 50px;
         object-fit: cover;
     }
+    .color{
+        background-color: #A3D8FF !important;
+        border-radius: 10px !important;
+      
+    }
+    table{
+        margin: auto;
+        
+        
+    }
+    #tbody tr td button{
+         margin: auto;
+         
+         border: none;
+         background-color: transparent;
+         font-weight: 900;
+         font-size: 30px;
+    }
+    #tbody tr td p{
+        font-size: 20px;
+    }
+   
+    
 </style>
 <body>
     
@@ -22,9 +45,10 @@
 
 
    <div id="table">
-    <table class="table table-striped" >
+    <table class="table" >
         <thead>
             <tr>
+                
                 <th scope="col">product</th>
                 <th scope="col">qty</th>
                 <th scope="col">price</th>
@@ -32,8 +56,11 @@
             </tr>
         </thead>
         <tbody id="tbody"></tbody>
+     
     </table>
+    <div id="totals" style="font-size: 20px;"></div>
    </div>
+   
 
 
 

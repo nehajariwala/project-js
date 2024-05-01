@@ -1,22 +1,42 @@
 import navbar from "../componants/nav.js";
 import update from "../componants/patch.js";
 
+import putdata from "../componants/put.js";
+
+
+
 
 document.getElementById("navbar").innerHTML=navbar()
 
 
+const getdata=()=>{
+    fetch("http://localhost:3000/cart")
+    .then((res)=>res.json()) 
+    .then((data)=>uimaker(data))
+}
+
+getdata()
+
+
+const del=(id)=>{
+   fetch(`http://localhost:3000/cart/${id}`,{
+    method:"DELETE"
+
+   })
+   
+}
 
 const handalqty=(opr,data)=>{
     if(opr == "+"){
         data.qty += 1
-        update(data)
+        putdata(data)
     }
     
 }
 const handalqty1=(opr,data)=>{
     if(opr == "-"){
         data.qty -= 1
-        update(data)
+        putdata(data)
     }
     
 }
@@ -24,12 +44,18 @@ handalqty1()
 handalqty()
 
 const uimaker=(data)=>{
+    let totalPrice = 0; 
 
         data.map((ele,i)=>{
+
+           
+
                 let img=document.createElement("img")
                 img.src=ele.Image
                 let title=document.createElement("h4")
                 title.innerHTML=ele.title
+
+            
 
                 let td1=document.createElement("td")
                 td1.append(img,title)
@@ -52,7 +78,10 @@ const uimaker=(data)=>{
               td2.append(btn1,qty1,btn2)
 
                let price=document.createElement("p")
-               price.innerHTML=ele.price*ele.qty
+            //    price.innerHTML=ele.price*ele.qty
+            let total = ele.price * ele.qty; 
+            price.innerHTML = total;
+            totalPrice += total; 
 
                let td3=document.createElement("td")
                td3.append(price)
@@ -61,10 +90,11 @@ const uimaker=(data)=>{
             let td4=document.createElement("button")
             td4.innerHTML="DELETE"
             td4.addEventListener("click",()=>{
-                cart.splice(i,1)
-             uimaker();
-       
-            })
+             del(ele.id)
+        })
+    
+            td4.setAttribute("class","color")
+      
 
 
                let tr=document.createElement("tr")
@@ -72,14 +102,21 @@ const uimaker=(data)=>{
 
                document.getElementById("tbody").append(tr)
         })
+        let amount= document.createElement("tr");
+        let totalamount = document.createElement("td");
+        totalamount.innerHTML = "Total Price:";
+
+    let finalprice = document.createElement("td");
+    finalprice.innerHTML = totalPrice;
+    amount.append(totalamount, finalprice);
+    document.getElementById("totals").append(amount);
          
 
 }
-const getdata=()=>{
-    fetch("http://localhost:3000/cart")
-    .then((res)=>res.json()) 
-    .then((data)=>uimaker(data))
-}
 
-getdata()
+
+
+
+
+
 

@@ -1,5 +1,8 @@
 import navbar from "../componants/nav.js";
-import postdata from "../componants/patch.js";
+import update from "../componants/patch.js";
+
+
+
 
 document.getElementById("navbar").innerHTML = navbar()
 
@@ -12,6 +15,8 @@ const getdata = () => {
 getdata()
 
 
+ 
+
 const isexits = (ele) => {
 
   fetch(`http://localhost:3000/cart/${ele.id}`)
@@ -22,7 +27,7 @@ const isexits = (ele) => {
     })
     .catch((error) => {
       ele.qty=1
-      postdata(ele, "http://localhost:3000/cart")
+      update(ele)
     })
 }
 
@@ -34,7 +39,7 @@ const uimaker = (data) => {
   data.map((ele) => {
 
 
-    let title = document.createElement("h3")
+    let title = document.createElement("h2")
     title.innerHTML = ele.title
 
     let img = document.createElement("img")
@@ -47,7 +52,7 @@ const uimaker = (data) => {
     category.innerHTML = ele.category
 
     let btn = document.createElement("button")
-    btn.innerHTML = "buy"
+    btn.innerHTML = "Buy"
     btn.addEventListener("click", () => isexits(ele))
     let div = document.createElement("div")
     div.append(img, title, category, price, btn)
