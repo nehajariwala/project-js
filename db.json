@@ -62,24 +62,6 @@
       "price": "800",
       "Image": "https://smartcasuals.ru/wp-content/uploads/2020/03/2020-02-23-19-38-15-175.jpeg",
       "category": "men"
-    },
-    {
-      "id": "5054",
-      "title": "",
-      "price": "",
-      "img": ""
-    },
-    {
-      "id": "afcb",
-      "title": "",
-      "price": "",
-      "img": ""
-    },
-    {
-      "id": "a973",
-      "title": "",
-      "price": "",
-      "img": ""
     }
   ],
   "cart": [
@@ -97,14 +79,14 @@
       "price": "800",
       "Image": "https://smartcasuals.ru/wp-content/uploads/2020/03/2020-02-23-19-38-15-175.jpeg",
       "category": "men",
-      "qty": 1
+      "qty": 2
     },
     {
-      "id": "f3ff",
-      "title": "tshirt",
-      "price": "1000",
-      "Image": "https://i.ytimg.com/vi/5nFkU43jpuU/maxresdefault.jpg",
-      "category": "female",
+      "id": "a446",
+      "title": "frock",
+      "price": "800",
+      "Image": "https://mypaprika.ru/upload/iblock/8a4/8a4c05880b6e616b246101225d3628f8.jpg",
+      "category": "child",
       "qty": 1
     }
   ]
